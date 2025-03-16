@@ -35,7 +35,6 @@ env.bak/
 venv.bak
 .venv/
 
-
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -56,3 +55,12 @@ cover/
 
 # python version
 .python-version
+
+# secrets
+.secrets
+
+# terraform
+infrastructure/terraform/.terraform/
+
+# airflow
+infrastructure/airflow/logs
