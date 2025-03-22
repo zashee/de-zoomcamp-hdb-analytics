@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: "{{ env_var('DBT_DATABASE', 'de-hdb-analytics-2025') }}"
+    schema: "{{ env_var('DBT_SCHEMA', 'sg_hdb_dataset') }}"
+
+    tables:
+      - name: hdb_resale
