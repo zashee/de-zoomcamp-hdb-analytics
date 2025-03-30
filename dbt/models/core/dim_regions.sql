@@ -1,4 +1,3 @@
--- models/marts/core/dim_location.sql
 SELECT DISTINCT
     town_id,
     town,

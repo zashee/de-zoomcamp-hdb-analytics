@@ -15,9 +15,9 @@ stg_transactions AS (
 
 SELECT
     t.unique_id AS transaction_id,
-    d.date_key,
+    d.date,
     r.town_id,
-    p.storey_range_min,
+    p.storey_id,
     t.block,
     t.street_name,
     t.flat_type,
@@ -39,9 +39,9 @@ SELECT
         WHEN t.resale_price < 800000 THEN 'High Range ($600k-$800k)'
         ELSE 'Premium Range ($800k+)'
     END AS price_tier,
-FROM dates d
-LEFT JOIN stg_transactions t 
-    ON d.year = t.year AND d.month_number = t.month_number
+FROM stg_transactions t
+INNER JOIN dates d
+    ON d.date = t.date
 LEFT JOIN properties p ON t.storey_range_min = p.storey_range_min
 LEFT JOIN regions r ON t.town = r.town
-ORDER BY d.year, d.month_number
+ORDER BY t.date
