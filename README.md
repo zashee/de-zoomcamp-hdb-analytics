@@ -3,6 +3,50 @@
 # Objective
 The objective of the project is to provide resale flat buyers information on the prices of flats by flat types and by regions and towns to allow buyers to have a feel of how much a certain flat will cost in a specific region/town.
 
+# Project Architecture
+![Project Architecture](img/hdb-analytics-data-architecture.png)
+
+
+## Project Structure
+```
+de-zoomcamp-hdb-analytics/
+├── README.md
+├── dbt
+│   ├── analyses
+│   ├── dbt_project.yml
+│   ├── macros
+│   ├── models
+│   │   ├── core
+│   │   │   ├── dim_date_spine.sql
+│   │   │   ├── dim_property.sql
+│   │   │   ├── dim_regions.sql
+│   │   │   └── fct_hdb_resale_transactions.sql
+│   │   └── staging
+│   │       ├── schema.yml
+│   │       └── stg_hdb_resale.sql
+│   ├── package-lock.yml
+│   ├── packages.yml
+│   ├── seeds
+│   │   ├── hdb_storey_categorization.csv
+│   │   └── town_region_lookup.csv
+│   ├── snapshots
+│   └── tests
+├── img
+├── infrastructure
+│   ├── airflow
+│   │   ├── Dockerfile
+│   │   ├── dags
+│   │   │   └── ingest_hdb_resale_2017_onwards.py
+│   │   ├── docker-compose.yaml
+│   │   └── requirements.txt
+│   └── terraform
+│       ├── main.tf
+│       ├── terraform.tfstate
+│       └── variables.tf
+├── pyproject.toml
+├── ruff.toml
+└── uv.lock
+```
 
 # Reproduce Project
 The steps below are used to reproduce the project on a remote VM in google cloud running Ubuntu 24.04.2 LTS.
