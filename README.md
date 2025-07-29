@@ -3,6 +3,16 @@
 # Objective
 The objective of the project is to provide resale flat buyers information on the prices of flats by flat types and by regions and towns to allow buyers to have a feel of how much a certain flat will cost in a specific region/town.
 
+# Dashboard
+![HDB Analytics Dashboard](img/hdb-analytics-dashboard.gif)
+
+## Dashboard Features
+* Filter charts by using the year slicer.
+* Hover over any of the clustered bars in "Average Resale Price By Flat Type" chart to see a pop up tooltip showing average resale price by remaining lease.
+* Click on any of the flat type in "Average Resale Price By Flat Type" chart to filter by flat type.
+* Hover over "Average Resale Price by Location" chart and click on the big down arrow icon at the top right of the chart to enable drill down. Then click on any of the region to drill down to town data.
+
+
 # Project Architecture
 ![Project Architecture](img/hdb-analytics-data-architecture.png)
 
@@ -143,10 +153,3 @@ sudo chown -R 50000:0 logs
 ![Dbt Envrionment Variables](img/dbt_env_vars.png)
 6. run `dbt seed` command to create seed tables.
 7. run `dbt build --full-refresh` to create all tables.
-
-### 5. Power BI Dashboard Usage
-Power BI dashboard can be found here: [HDB Analytics Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMTc3ZGNiZDQtZjlhMS00NDUwLThhZTMtNjJjMWFhYTY2ZjAzIiwidCI6ImIzNGVmZTExLTE0ZjAtNGEzNi05MjI4LThjMDExNWEwMGRkNyIsImMiOjEwfQ%3D%3D&pageName=abe9f6a7074b8079c206)
-* Filter charts by using the year slicer.
-* Hover over any of the clustered bars in "Average Resale Price By Flat Type" chart to see a pop up tooltip showing average resale price by remaining lease.
-* Click on any of the flat type in "Average Resale Price By Flat Type" chart to filter by flat type.
-* Hover over "Average Resale Price by Location" chart and click on the big down arrow icon at the top right of the chart to enable drill down. Then click on any of the region to drill down to town data.
